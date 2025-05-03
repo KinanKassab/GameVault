@@ -1,0 +1,496 @@
+/* 🌌: الجذور والمتغيرات */
+:root {
+  --color-background: #0F172A;
+  --color-primary-glass: rgba(30, 58, 138, 0.5);
+  --color-accent: #38BDF8;
+  --color-text: #E2E8F0;
+  --glass-blur: blur(16px);
+}
+
+/* 🧹: إعادة ضبط الأساسيات */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('../../images/Main.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--color-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.6;
+}
+
+/* 📦: الحاوية العامة */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 🧊: تأثير زجاجي */
+.glass-container {
+  background: var(--color-primary-glass);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 🚀: الهيدر */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 1rem 0;
+  background: var(--color-primary-glass);
+  backdrop-filter: var(--glass-blur);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* يجعل العناصر تتوزع بشكل أفضل على الشاشات الصغيرة */
+}
+
+.logo {
+  color: var(--color-accent);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button {
+  background: var(--color-primary-glass);
+  border: none;
+  color: var(--color-text);
+  padding: 0.75rem;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: var(--glass-blur);
+}
+
+.menu-button:hover {
+  background: var(--color-accent);
+  transform: scale(1.05);
+}
+
+/* 🔍: البحث */
+.search-container {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 3rem;
+  background: var(--color-primary-glass);
+  border: none;
+  border-radius: 1.2rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  backdrop-filter: var(--glass-blur);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--color-accent);
+  background: rgba(30, 58, 138, 0.6);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus + .search-icon {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* 🧩: فئات الألعاب */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.category-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-primary-glass);
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: var(--glass-blur);
+}
+
+.category-button:hover,
+.category-button.active {
+  background: var(--color-accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+}
+
+/* 🎮: شبكة الألعاب */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .games-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.game-card {
+  cursor: pointer;
+  text-align: left;
+  background: var(--color-primary-glass);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transform: scale(1.02);
+}
+
+.game-card:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.game-content {
+  padding: 1rem;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.game-description {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.game-category {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.game-category-icon {
+  margin-right: 0.75rem;
+}
+
+/* 📱: التنقل للهاتف */
+.mobile-nav {
+  position: fixed;
+  top: 9999px;
+  left: 999px;
+  transform: translate(-50%, -50%) scale(0.9); /* الحجم مبدئي أقل */
+  width: 90%;
+  max-width: 420px;
+  background: var(--color-primary-glass);
+  border-radius: 20px; /* جعل الزوايا مدورة بشكل أكبر */
+  padding: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); /* تأثير الظل يكون أعمق */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  backdrop-filter: blur(15px); /* تأثير الضبابية أقوى */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; /* إتاحة التمرير إذا كانت القائمة طويلة */
+  list-style: none;
+}
+
+.mobile-nav.active {
+  transform: translate(-50%, -50%) scale(1); /* الحجم يزداد مع ظهور القائمة */
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+}
+
+.mobile-nav a {
+  display: block;
+  text-align: center;
+  padding: 14px 18px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.15); /* خلفية أفتح للروابط */
+  border-radius: 10px; /* تقليل التدوير */
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.07); /* إضافة حركة جانبية عند التمرير */}
+
+.nav-list {
+  list-style: none; /* إزالة أي نقاط أو رموز */
+  padding-left: 0; /* إزالة المسافة من الجهة اليسرى */
+}
+
+/* إزالة زر الإغلاق */
+.close-menu {
+  display: none; /* تم إخفاؤه تمامًا */
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* زيادة الشفافية */
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ♿: تحسين الوصول */
+button:focus,
+input:focus,
+a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* 🖱️: شريط التمرير */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 1rem;
+}
+
+/* 🎞️: انيميشن */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+svg {
+  stroke: #FFFFFF;
+  fill: #FFFFFF;
+}
+
+.game-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.game-categories a {
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.game-categories a:hover {
+  background-color: #444;
+}
+
+/* 🔄: استجابة محسنة لأجهزة الجوال */
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .menu-button {
+    min-width: 50px;
+    min-height: 50px;
+    padding: 1rem;
+  }
+
+  .search-input {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .game-title {
+    font-size: 16px;
+  }
+
+  .game-description {
+    font-size: 0.75rem;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-nav a {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+}
+
+/* 🧩: فئات الألعاب */
+.game-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 2rem;
+  margin-top: 4rem;
+  background: var(--color-primary-glass); /* خلفية زجاجية متناسقة */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* إضافة تأثير الظل */
+  backdrop-filter: var(--glass-blur); /* تأثير الضبابية */
+}
+
+/* تصميم الأزرار داخل الفئات */
+.game-categories a {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.game-categories a:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.03);
+}
+
+/* تعديل الـ section ليكون أكثر وضوحًا */
+section {
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+section .container {
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* تحسين تصميم الفئات للأجهزة المحمولة */
+@media (max-width: 768px) {
+  .game-categories {
+    flex-direction: column;
+    gap: 15px; /* تقليل المسافة بين الفئات للأجهزة المحمولة */
+    padding: 1.5rem;
+  }
+
+  .game-categories a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+
+/*فبرتلىمنمهانتلربغؤقيبرلتلانات*/
+.load-more-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#loadMoreBtn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--color-accent);
+  color: #0F172A;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#loadMoreBtn:hover {
+  transform: scale(1.05);
+}

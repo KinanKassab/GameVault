@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/Logo.ico">
+    <meta name="description" content="GameVault - Your modern gaming collection hub" />
+    <title>GameVault - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header glass-container">
+      <div class="container header-content">
+        <a class="logo">🎮 GameVault</a>
+        <button class="menu-button" id="menuButton">☰</button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Modal -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="close-menu" id="closeMenu">✖</button>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="Game-Hub/Home/index.html">Games</a></li>
+        <li><a class="nav-link" href="Contact-Us/index.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content" style="    
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;">
+        <h2>Welcome to GameVault</h2>
+        <p>Explore the latest games and stay updated with the trending titles in the gaming world.</p>
+      </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="games" class="featured-games">
+      <div class="container">
+        <h2>Featured Games</h2>
+        <div class="games-grid"></div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

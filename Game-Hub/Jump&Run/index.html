@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../../images/Logo.ico">
+    <link rel="icon" href="../images/Logo.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVault - Game Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header glass-container">
+    <div class="container header-content">
+      <a class="logo">🎮 GameVault</a>
+      <button class="menu-button" id="menuButton">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-menu" id="closeMenu">✖</button>
+    <ul class="nav-list">
+      <li><a class="nav-link" href="../../index.html">Home</a></li>
+      <li><a class="nav-link" href="../Home/index.html">Games</a></li>
+      <li><a class="nav-link" href="../../Contact-Us/index.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section class="container">
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search for a game..." />
+      <span class="search-icon">🔍</span>
+    </div>
+  </section>
+
+  <section class="container">
+    <div id="gamesGrid" class="games-grid">
+      <!-- ألعاب يتم تحميلها ديناميكياً -->
+    </div>
+  </section>
+
+  <section>
+    <div class="game-categories">
+      <a href="../Home/index.html"><i class="fas fa-home"></i> HOME</a>
+      <a href="../AllGames/index.html"><i class="fas fa-bars"></i> ALL GAMES</a>
+      <a href="../Arcade/index.html"><i class="fas fa-rocket"></i> ARCADE</a>
+      <a href="../BubbleShooter/index.html"><i class="fas fa-bullseye"></i> BUBBLE SHOOTER</a>
+      <a href="../Cards/index.html"><i class="fas fa-clone"></i> CARDS</a>
+      <a href="../Girls/index.html"><i class="fas fa-female"></i> GIRLS</a>
+      <a href="../Jump&Run/index.html"><i class="fas fa-running"></i> JUMP & RUN</a>
+      <a href="../Match3/index.html"><i class="fas fa-th-large"></i> MATCH 3</a>
+      <a href="../Puzzle/index.html"><i class="fas fa-lightbulb"></i> PUZZLE</a>
+      <a href="../Quiz/index.html"><i class="fas fa-question-circle"></i> QUIZ</a>
+      <a href="../Racing/index.html"><i class="fas fa-flag-checkered"></i> RACING</a>
+      <a href="../Sport/index.html"><i class="fas fa-futbol"></i> SPORT</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

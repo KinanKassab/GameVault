@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="../../images/Logo.ico">
+  <title>GameVault – Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header glass-container">
+    <div class="container header-content">
+      <a class="logo">🎮 GameVault</a>
+      <button class="menu-button" id="menuButton">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Modal -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-menu" id="closeMenu">✖</button>
+    <ul class="nav-list">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="Game-Hub/Home/index.html">Games</a></li>
+      <li><a class="nav-link" href="Contact-Us/index.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="glass-container contact-container">
+        <h2>Contact Us</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message here" required></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileNav = document.getElementById("mobileNav");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    menuButton.addEventListener("click", () => {
+      mobileNav.classList.add("active");
+      menuOverlay.classList.add("active");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+      menuOverlay.classList.remove("active");
+    });
+
+    menuOverlay.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
